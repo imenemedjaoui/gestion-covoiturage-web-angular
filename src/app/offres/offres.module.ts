@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 
-import {EffectsModule, Actions, Effect } from "@ngrx/effects";
+import {EffectsModule, Actions} from "@ngrx/effects";
 
 import { StoreModule } from '@ngrx/store';
 import { offreReducer } from './state/offre.reducer';
