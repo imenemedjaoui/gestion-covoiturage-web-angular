@@ -9,12 +9,12 @@ import * as offreActions from '../state/offre.actions';
   styleUrls: ['./offre-list.component.css']
 })
 export class OffreListComponent implements OnInit {
-  customers;
+  offres;
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
     this.store.dispatch(new offreActions.LoadOffres());
-    this.store.subscribe(state => (this.customers = state.customers.customers));
+    this.store.subscribe(state => (this.offres = state.offres.offres));
   }
 
 }

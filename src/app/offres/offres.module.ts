@@ -9,14 +9,14 @@ import { offreReducer } from './state/offre.reducer';
 import { OffreEffect } from './state/offre.effects';
 
 import { OffreComponent } from './offre/offre.component';
-import { OffreAddComponent } from './offre-add/offre-add.component';
+//import { OffreAddComponent } from './offre-add/offre-add.component';
 import { OffreEditComponent } from './offre-edit/offre-edit.component';
 import { OffreListComponent } from './offre-list/offre-list.component';
 
 const offreRoutes: Routes = [{ path: "", component: OffreComponent }];
 
 @NgModule({
-  declarations: [OffreComponent, OffreAddComponent, OffreEditComponent, OffreListComponent],
+  declarations: [OffreComponent,  OffreEditComponent, OffreListComponent],
   imports: [RouterModule.forChild(offreRoutes),
     CommonModule,
     EffectsModule.forFeature([OffreEffect]),

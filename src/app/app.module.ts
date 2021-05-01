@@ -9,6 +9,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { OffreAddComponent } from './offres/offre-add/offre-add.component'; 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
+    OffreAddComponent,
     NavbarComponent
   ],
   imports: [
