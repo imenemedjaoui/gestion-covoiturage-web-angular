@@ -1,33 +1,32 @@
 {
     "offres": [
         {
-            "id":1,
             "proposerpar": "mstr1",
             "villeDep": "pyongyang",
             "villeArv": "Jeju",
-            "date": "28/04/2021"
-
+            "date": "28/04/2021",
+            "id":1
         },
         {
-            "id":2,
             "proposerpar": "mstr1",
             "villeDep": "Tokyo",
             "villeArv": "Kyoto",
-            "date": "01/05/2021"
+            "date": "01/05/2021",
+            "id":2
         },
         {
-            "id":3,
-            "proposerPar":"employé 1",
+            "proposerpar":"employé 1",
+            "villeDep":"Pyongyang",
+            "villeArv":"Kyoto",
             "date":"29/04/2021",
-            "v-depart":"Pyongyang",
-            "v-arrive":"Kyoto"
+            "id":3
         },
         {
-            "id":4,
-            "proposerPar":"employé 2",
+            "proposerpar":"employé 2",
+            "villeDep":"Moscow",
+            "villeArv":"Hanalulu",
             "date":"30/04/2021",
-            "v-depart":"Moscow",
-            "v-arrive":"Hanalulu"
+            "id":4
         }
     ]
 }
