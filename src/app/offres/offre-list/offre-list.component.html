@@ -11,21 +11,18 @@
     </tr>
   </thead>
   <tbody>
-    <!--<tr>
+    <tr>
       <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
-    </tr>-->
+    </tr>
     <tr *ngFor="let offre of (offres$ | async)">
       <th scope="row">{{offre.proposerpar}}</th>
       <td>{{offre.villeDep}}</td>
       <td>{{offre.villeArv}}</td>
       <td>{{offre.date}}</td>
       <th>
-          <a style="color: #408816;">modifier</a>
-          <br>
-          <a style="color: #408816;">supprimer</a>
-        <!--<a (click)=editOffre(offre)>edit</a>-->
+        <a style="color: #408816;" (click)=editOffre(offre)>modifier</a>
         <br>
-        <!--<a (click)=deleteOffre(offre)>delete</a>-->
+        <a  style="color: #408816;" (click)=deleteOffre(offre)>supprimer</a>
       </th>
     </tr>
   </tbody>

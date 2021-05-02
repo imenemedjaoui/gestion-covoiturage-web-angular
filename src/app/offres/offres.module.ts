@@ -12,11 +12,12 @@ import { OffreComponent } from './offre/offre.component';
 //import { OffreAddComponent } from './offre-add/offre-add.component';
 import { OffreEditComponent } from './offre-edit/offre-edit.component';
 import { OffreListComponent } from './offre-list/offre-list.component';
+import { OffreSearchComponent } from './offre-search/offre-search.component';
 
 const offreRoutes: Routes = [{ path: "", component: OffreComponent }];
 
 @NgModule({
-  declarations: [OffreComponent,  OffreEditComponent, OffreListComponent],
+  declarations: [OffreComponent,  OffreEditComponent, OffreListComponent, OffreSearchComponent],
   imports: [RouterModule.forChild(offreRoutes),
     CommonModule,
     EffectsModule.forFeature([OffreEffect]),
