@@ -1,3 +1,4 @@
+<div class="container border" style="border-radius:2% ;">
 <h3>Liste des offres</h3>
 <table class="table table-hover">
   <thead>
@@ -13,7 +14,7 @@
     <!--<tr>
       <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
     </tr>-->
-    <tr *ngFor="let offre of offres">
+    <tr *ngFor="let offre of (offres$ | async)">
       <th scope="row">{{offre.proposerpar}}</th>
       <td>{{offre.villeDep}}</td>
       <td>{{offre.villeArv}}</td>
@@ -29,3 +30,4 @@
     </tr>
   </tbody>
 </table>
+</div>

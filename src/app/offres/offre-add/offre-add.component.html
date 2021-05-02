@@ -1,25 +1,25 @@
-
-<div class="container">
+<div class="container col-lg-10"  style="margin-left:15%;">
+  <div class="jumbotron col-lg-8 border" style="border-radius: 10%;">
 <div style="padding-left: 25%;">
 <h4>Ajouter une nouvelle offre</h4>
 <form class="form-horizontal">
   <!--<form [formGroup]="offreForm" (submit)="createOffre()" class="form-inline mb-4">-->
     <label class="sr-only" for="Proposé par" class="col-lg-2 control-label">Proposé par</label>
-    <div class="input-group mb-2 mr-sm-2 col-lg-6">
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
       <input type="text" class="form-control" formControlName="proposerpar" placeholder="Nom Prénom">
     </div>
     <label class="sr-only" for="Ville de départ" class="col-lg-2 control-label">Ville de départ</label>
-    <div class="input-group mb-2 mr-sm-2 col-lg-6">
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
       <input type="text" class="form-control" formControlName="villeDep" placeholder="Ville départ">
     </div>
 
     <label class="sr-only" for="Ville d'arrivée" class="col-lg-2 control-label">Ville d'arrivée</label>
-    <div class="input-group mb-2 mr-sm-2 col-lg-6">
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
       <input type="text" class="form-control" formControlName="villeArv" placeholder="Ville arrivée">
     </div>
 
     <label class="sr-only" for="Date" class="col-lg-2 control-label">Date</label>
-    <div class="input-group mb-2 mr-sm-2 col-lg-6">
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
         <input type="date" class="form-control" formControlName="date">
     </div>
     <div style="padding-left: 17%;">
@@ -28,5 +28,6 @@
     </div>
     
   </form>
+</div>
 </div>
 </div>
