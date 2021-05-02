@@ -13,6 +13,8 @@ import { OffreAddComponent } from './offres/offre-add/offre-add.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule, FormsModule 
 
   ],
   providers: [],

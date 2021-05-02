@@ -1,5 +1,5 @@
 export interface Offre {
-    id:number;
+    id?:number;
     proposerpar: string;
     villeDep: string;
     villeArv: string;

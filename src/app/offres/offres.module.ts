@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
-
 import {EffectsModule, Actions} from "@ngrx/effects";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { StoreModule } from '@ngrx/store';
 import { offreReducer } from './state/offre.reducer';
@@ -19,9 +19,13 @@ const offreRoutes: Routes = [{ path: "", component: OffreComponent }];
 @NgModule({
   declarations: [OffreComponent,  OffreEditComponent, OffreListComponent, OffreSearchComponent],
   imports: [RouterModule.forChild(offreRoutes),
-    CommonModule,
+    CommonModule,ReactiveFormsModule, FormsModule,
     EffectsModule.forFeature([OffreEffect]),
     StoreModule.forFeature("offres",offreReducer)
+  ],
+  exports:[
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class OffresModule { }

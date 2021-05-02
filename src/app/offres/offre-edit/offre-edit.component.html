@@ -1,8 +1,6 @@
 <div class="mt-4">
     <h3>Modifier l'offre séléctionnée:</h3>
-    
-    <form class="form-inline mb-4">
-    <!--<form [formGroup]="offreForm" (submit)="updateOffre()" class="form-inline mb-4">-->
+    <form [formGroup]="offreForm" (submit)="updateOffre()" class="form-inline mb-4">
         <label class="sr-only" for="Proposé par">Proposé par</label>
         <div class="input-group mb-2 mr-sm-2">
           <input type="text" class="form-control" formControlName="proposerpar" placeholder="Nom Prénom">
@@ -22,7 +20,6 @@
         <div class="input-group mb-2 mr-sm-2">
             <input type="date" class="form-control" formControlName="date">
         </div>
-  
       <button type="submit" class="btn btn-primary mb-2" style="color:white; background-color: #408816;">Modifier l'offre</button>
   
     </form>

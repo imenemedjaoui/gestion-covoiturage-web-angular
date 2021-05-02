@@ -15,6 +15,7 @@ import * as offreActions from '../state/offre.actions';
 export class OffreListComponent implements OnInit {
   offres$: Observable<Offre[]>;
   error$: Observable<String>;
+  
   constructor(private store: Store<fromOffre.AppState>) { }
 
   ngOnInit() {
@@ -29,7 +30,7 @@ deleteOffre(offre:  Offre) {
     }
   }
 
-  editCustomer(offre: Offre) {
+editOffre(offre: Offre) {
     this.store.dispatch(new offreActions.LoadOffre(offre.id));
   }
 }
