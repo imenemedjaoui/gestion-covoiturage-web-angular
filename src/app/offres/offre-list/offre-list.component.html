@@ -21,7 +21,8 @@
       <th scope="col">Ville de départ</th>
       <th scope="col">Ville d'arrivée</th>
       <th scope="col">Date</th>
-      <th></th>
+      <th>Modifications</th>
+      <th>Suppressions</th>
     </tr>
   </thead>
   <tbody *ngIf ="villedp == ''  && villearr == '' && date == '' ;else elseBlock">
@@ -35,10 +36,10 @@
       <td>{{offre.villeArv}}</td>
       <td>{{offre.date}}</td>
       <th>
-        <a (click)=editOffre(offre)>edit</a>
+        <a style="color: #408816;" (click)=editOffre(offre)>modifier</a>
       </th>
       <th>
-        <a (click)=deleteOffre(offre)>delete</a>
+        <a style="color: #408816;" (click)=deleteOffre(offre)>supprimer</a>
       </th>
     </tr>
   </tbody>
@@ -54,8 +55,9 @@
       <td>{{offre.villeArv}}</td>
       <td>{{offre.date}}</td>
       <th>
-        <a style="color: #408816;" (click)= editOffre(offre)>modifier</a>
-        <br>
+        <a style="color: #408816;" (click)= editOffre(offre)>modifier</a></th>
+
+      <th>
         <a  style="color: #408816;" (click)= deleteOffre(offre)>supprimer</a>
       </th>
 
