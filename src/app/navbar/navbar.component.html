@@ -10,7 +10,10 @@
           <a class="nav-link" [routerLink]="['/offres']">Gestion d'offres</a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-      </ul>
     </div>
+    
+    <form class="form-inline my-2 mr-lg-4">
+      <input class="form-control mr-sm-2" type="search" placeholder="chercher par employé" ng-model="searchText" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">chercher</button>
+    </form>
   </nav>

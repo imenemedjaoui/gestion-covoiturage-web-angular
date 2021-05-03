@@ -78,14 +78,13 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
 
         case offreActions.OffreActionTypes.UPDATE_OFFRE_SUCCESS: {
             return offreAdapter.updateOne(action.payload, state);
-        }
-
-        case offreActions.OffreActionTypes.UPDATE_OFFRE_FAIL: {
+          }
+          case offreActions.OffreActionTypes.UPDATE_OFFRE_FAIL: {
             return {
-                ...state,
-                error: action.payload
+              ...state,
+              error: action.payload
             };
-        }
+          }
 
         case offreActions.OffreActionTypes.DELETE_OFFRE_SUCCESS: {
             return offreAdapter.removeOne(action.payload, state);

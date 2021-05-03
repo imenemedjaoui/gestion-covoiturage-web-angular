@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
-import {EffectsModule, Actions} from "@ngrx/effects";
+import {EffectsModule} from "@ngrx/effects";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+
+import { DatePipe } from '@angular/common';
 
 import { StoreModule } from '@ngrx/store';
 import { offreReducer } from './state/offre.reducer';
@@ -12,12 +14,12 @@ import { OffreComponent } from './offre/offre.component';
 //import { OffreAddComponent } from './offre-add/offre-add.component';
 import { OffreEditComponent } from './offre-edit/offre-edit.component';
 import { OffreListComponent } from './offre-list/offre-list.component';
-import { OffreSearchComponent } from './offre-search/offre-search.component';
+
 
 const offreRoutes: Routes = [{ path: "", component: OffreComponent }];
 
 @NgModule({
-  declarations: [OffreComponent,  OffreEditComponent, OffreListComponent, OffreSearchComponent],
+  declarations: [OffreComponent,  OffreEditComponent, OffreListComponent],
   imports: [RouterModule.forChild(offreRoutes),
     CommonModule,ReactiveFormsModule, FormsModule,
     EffectsModule.forFeature([OffreEffect]),
@@ -26,6 +28,9 @@ const offreRoutes: Routes = [{ path: "", component: OffreComponent }];
   exports:[
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    DatePipe
   ]
 })
 export class OffresModule { }

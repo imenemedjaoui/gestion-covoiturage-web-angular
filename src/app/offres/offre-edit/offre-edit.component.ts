@@ -6,7 +6,7 @@ import * as offreActions from "../state/offre.actions";
 
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
-
+import { DatePipe } from '@angular/common';
 import { Observable } from "rxjs";
 
 @Component({
@@ -20,7 +20,9 @@ export class OffreEditComponent implements OnInit {
   
     constructor(
       private fb: FormBuilder,
-      private store: Store<fromOffre.AppState>
+      private store: Store<fromOffre.AppState>,
+      public datepipe: DatePipe
+
     ) { }
   
     ngOnInit() {
@@ -40,9 +42,9 @@ export class OffreEditComponent implements OnInit {
         if (currentOffre) {
           this.offreForm.patchValue({
             proposerpar: currentOffre.proposerpar,
-            phone: currentOffre.villeDep,
-            address: currentOffre.villeArv,
-            membership: currentOffre.date,
+            villeDep: currentOffre.villeDep,
+            villeArv: currentOffre.villeArv,
+            date:this.datepipe.transform(new Date(currentOffre.date), 'yyyy-MM-dd'),
             id: currentOffre.id
           });
         }
