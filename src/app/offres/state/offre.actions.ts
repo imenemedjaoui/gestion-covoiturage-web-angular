@@ -1,6 +1,8 @@
 import { Action } from '@ngrx/store';
 import { Offre } from '../offre.model';
 import { Update } from '@ngrx/entity';
+import { createAction } from '@ngrx/store';
+
 
 export enum OffreActionTypes {
     LOAD_OFFRES = "[Offre] Load Offres",
