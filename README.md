@@ -1,4 +1,4 @@
-# gestion-covoiturage-web-angular
+# Projet web Angular gestion d'offres de covoiturage
 
 Specialité: M2 ISII
 Module : Ingénierie Web Avancée
