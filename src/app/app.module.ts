@@ -14,7 +14,6 @@ import { OffreSearchComponent } from './offres/offre-search/offre-search.compone
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -31,13 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     EffectsModule.forRoot([]),
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule, FormsModule,
-    ToastrModule.forRoot({
-      positionClass: "toast-top-right",
-      preventDuplicates: true,
-      extendedTimeOut: 1000
-      })
-
+    ReactiveFormsModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

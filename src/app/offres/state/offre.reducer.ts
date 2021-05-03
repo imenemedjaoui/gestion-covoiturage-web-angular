@@ -29,16 +29,6 @@ export const defaultOffre: OffreState = {
 
 export const initialState = offreAdapter.getInitialState(defaultOffre);
 
-const _counterReducer = createReducer(initialState,
-    on(offreActions.displaySuccess, state => state),
-    on(offreActions.displayError, state => state),
-    on(offreActions.displayWarning, state => state)
-  );
-  
-  export function counterReducer(state, action) {
-    return _counterReducer(state, action);
-  }
-
 
 export function offreReducer(state = initialState, action: offreActions.Actions): OffreState{
     switch(action.type){
@@ -78,12 +68,10 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
             }
 
         case offreActions.OffreActionTypes.CREATE_OFFRE_SUCCESS: {
-            _counterReducer(state,offreActions.displaySuccess);
             return offreAdapter.addOne(action.payload, state);
         }
 
         case offreActions.OffreActionTypes.CREATE_OFFRE_FAIL: {
-            _counterReducer(state,offreActions.displayError);
             return {
                 ...state,
                 error: action.payload
@@ -91,11 +79,9 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
         }
 
         case offreActions.OffreActionTypes.UPDATE_OFFRE_SUCCESS: {
-            _counterReducer(state,offreActions.displaySuccess);
             return offreAdapter.updateOne(action.payload, state);
           }
           case offreActions.OffreActionTypes.UPDATE_OFFRE_FAIL: {
-            _counterReducer(state,offreActions.displayError);
             return {
               ...state,
               error: action.payload
@@ -103,12 +89,10 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
           }
 
         case offreActions.OffreActionTypes.DELETE_OFFRE_SUCCESS: {
-            _counterReducer(state,offreActions.displayWarning);
             return offreAdapter.removeOne(action.payload, state);
         }
 
         case offreActions.OffreActionTypes.DELETE_OFFRE_FAIL: {
-            _counterReducer(state,offreActions.displayError);
             return {
                 ...state,
                 error: action.payload

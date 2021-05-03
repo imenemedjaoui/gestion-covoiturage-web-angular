@@ -11,7 +11,6 @@ import { offreReducer } from './state/offre.reducer';
 import { OffreEffect } from './state/offre.effects';
 
 import { OffreComponent } from './offre/offre.component';
-//import { OffreAddComponent } from './offre-add/offre-add.component';
 import { OffreEditComponent } from './offre-edit/offre-edit.component';
 import { OffreListComponent } from './offre-list/offre-list.component';
 
