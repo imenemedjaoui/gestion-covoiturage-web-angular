@@ -3,8 +3,9 @@ import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType, createEffect } from "@ngrx/effects";
 import { Action } from "@ngrx/store";
 
+import { ToastrService } from "ngx-toastr";
 import { Observable, of } from "rxjs";
-import { map, mergeMap, catchError } from "rxjs/operators";
+import { map, mergeMap, catchError, tap } from "rxjs/operators";
 
 import { OffreService } from "../offre.service";
 import * as offreActions from "../state/offre.actions";
@@ -12,9 +13,43 @@ import { Offre } from "../offre.model";
 
 @Injectable()
 export class OffreEffect {
+  displaySuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(offreActions.displaySuccess),
+        tap(action => {
+          this.toastr.success(action.description, action.title);
+        })
+      ),
+    { dispatch: false }
+  );
+
+  displayWarning$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(offreActions.displayWarning),
+        tap(action => {
+          this.toastr.warning(action.description, action.title);
+        })
+      ),
+    { dispatch: false }
+  );
+
+  displayError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(offreActions.displayError),
+        tap(action => {
+          this.toastr.error(action.description, action.title);
+        })
+      ),
+    { dispatch: false }
+  );
+
   constructor(
     private actions$: Actions,
-    private offreService: OffreService
+    private offreService: OffreService,
+    private toastr:ToastrService
   ) {}
 
   @Effect()
@@ -62,7 +97,12 @@ export class OffreEffect {
             new offreActions.CreateOffreSuccess(newOffre)
         ),
         catchError(err => of(new offreActions.CreateOffreFail(err)))
-      )
+      ).pipe(map(action =>
+        offreActions.displaySuccess({
+          title: "Succès d'ajout",
+          description: "l'offre a bien été ajoutée"
+        })
+      ))
     )
   );
 
