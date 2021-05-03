@@ -1,0 +1,32 @@
+{
+  "offres": [
+    {
+      "proposerpar": "employé 7",
+      "villeDep": "tokyo",
+      "villeArv": "kyoto",
+      "date": "2021-05-01",
+      "id": 2
+    },
+    {
+      "proposerpar": "employé 3",
+      "villeDep": "pyongyang",
+      "villeArv": "kyoto",
+      "date": "2021-04-29",
+      "id": 3
+    },
+    {
+      "proposerpar": "employé 7",
+      "villeDep": "moscow",
+      "villeArv": "hanalulu",
+      "date": "2022-04-30",
+      "id": 4
+    },
+    {
+      "proposerpar": "empl",
+      "villeDep": "ville1",
+      "villeArv": "ville 2",
+      "date": "2021-05-22",
+      "id": 5
+    }
+  ]
+}
