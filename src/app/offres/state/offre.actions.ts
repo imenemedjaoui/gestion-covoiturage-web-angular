@@ -22,10 +22,6 @@ export enum OffreActionTypes {
     DELETE_OFFRE = "[Offre] Delete Offre",
     DELETE_OFFRE_SUCCESS = "[Offre] Delete Offre Success",
     DELETE_OFFRE_FAIL = "[Offre] Delete Offre Fail",
-
-    SEARCH_BY = "[Offre] Search Offre",
-    SEARCH_BY_SUCCESS = "[Offre] Search Offre Success",
-    SEARCH_BY_FAIL = "[Offre] Search Offre Fail"
   }
 
 export class LoadOffres implements Action {
