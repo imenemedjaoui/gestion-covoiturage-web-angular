@@ -1,7 +1,7 @@
 import * as offreActions from "./offre.actions";
 import { Offre } from "../offre.model";
 import * as fromRoot from "../../state/app-state";
-import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector,createReducer, on } from "@ngrx/store";
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 
 export interface OffreState extends EntityState<Offre> {
@@ -26,7 +26,19 @@ export const defaultOffre: OffreState = {
     error:""
 }
 
+
 export const initialState = offreAdapter.getInitialState(defaultOffre);
+
+const _counterReducer = createReducer(initialState,
+    on(offreActions.displaySuccess, state => state),
+    on(offreActions.displayError, state => state),
+    on(offreActions.displayWarning, state => state)
+  );
+  
+  export function counterReducer(state, action) {
+    return _counterReducer(state, action);
+  }
+
 
 export function offreReducer(state = initialState, action: offreActions.Actions): OffreState{
     switch(action.type){
@@ -66,10 +78,12 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
             }
 
         case offreActions.OffreActionTypes.CREATE_OFFRE_SUCCESS: {
+            _counterReducer(state,offreActions.displaySuccess);
             return offreAdapter.addOne(action.payload, state);
         }
 
         case offreActions.OffreActionTypes.CREATE_OFFRE_FAIL: {
+            _counterReducer(state,offreActions.displayError);
             return {
                 ...state,
                 error: action.payload
@@ -77,9 +91,11 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
         }
 
         case offreActions.OffreActionTypes.UPDATE_OFFRE_SUCCESS: {
+            _counterReducer(state,offreActions.displaySuccess);
             return offreAdapter.updateOne(action.payload, state);
           }
           case offreActions.OffreActionTypes.UPDATE_OFFRE_FAIL: {
+            _counterReducer(state,offreActions.displayError);
             return {
               ...state,
               error: action.payload
@@ -87,10 +103,12 @@ export function offreReducer(state = initialState, action: offreActions.Actions)
           }
 
         case offreActions.OffreActionTypes.DELETE_OFFRE_SUCCESS: {
+            _counterReducer(state,offreActions.displayWarning);
             return offreAdapter.removeOne(action.payload, state);
         }
 
         case offreActions.OffreActionTypes.DELETE_OFFRE_FAIL: {
+            _counterReducer(state,offreActions.displayError);
             return {
                 ...state,
                 error: action.payload

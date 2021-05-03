@@ -1,8 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Offre } from '../offre.model';
 import { Update } from '@ngrx/entity';
-import { createAction } from '@ngrx/store';
-
+import { createAction,props } from '@ngrx/store';
 
 export enum OffreActionTypes {
     LOAD_OFFRES = "[Offre] Load Offres",
@@ -99,3 +98,16 @@ export type Actions = LoadOffres | LoadOffresSuccess | LoadOffresFail
                     | CreateOffre | CreateOffreSuccess | CreateOffreFail
                     | UpdateOffre | UpdateOffreSuccess | UpdateOffreFail
                     | DeleteOffre | DeleteOffreSuccess | DeleteOffreFail;
+
+export const displaySuccess = createAction(
+  "[Toastr Notification] Display Success",
+  props<{ title: string; description: string }>()
+);
+export const displayWarning = createAction(
+  "[Toastr Notification] Display Warning",
+  props<{ title: string; description: string }>()
+);
+export const displayError = createAction(
+  "[Toastr Notification] Display Error",
+  props<{ title: string; description: string }>()
+);
