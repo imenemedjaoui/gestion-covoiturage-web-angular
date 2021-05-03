@@ -1,0 +1,68 @@
+<h3>Recherche avancée </h3>
+<div>
+  <input  class="ml-lg-3" type="text" [(ngModel)]="villedp"
+    placeholder="recherche ville depart"
+  />
+
+  <input class="ml-lg-3" type="text" [(ngModel)]="villearr"
+    placeholder="recherche ville d'arrivée"
+  />
+
+  <input class="ml-lg-3" type="date" [(ngModel)]="date"/>
+</div>
+
+<hr>
+<div class="container border" style="border-radius:2% ;">
+<h3>Liste des offres</h3>
+<table class="table table-hover">
+  <thead>
+    <tr style="background-color: #408816; color:white;">
+      <th scope="col">Proposé par</th>
+      <th scope="col">Ville de départ</th>
+      <th scope="col">Ville d'arrivée</th>
+      <th scope="col">Date</th>
+      <th>Modifications</th>
+      <th>Suppressions</th>
+    </tr>
+  </thead>
+  <tbody *ngIf ="villedp == ''  && villearr == '' && date == '' ;else elseBlock">
+    <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr>
+    
+    <tr *ngFor="let offre of (offres$ |async)" >
+      <th scope="row">{{offre.proposerpar}}</th>
+      <td>{{offre.villeDep}}</td>
+      <td>{{offre.villeArv}}</td>
+      <td>{{offre.date}}</td>
+      <th>
+        <a style="color: #408816;" (click)=editOffre(offre)>modifier</a>
+      </th>
+      <th>
+        <a style="color: #408816;" (click)=deleteOffre(offre)>supprimer</a>
+      </th>
+    </tr>
+  </tbody>
+  <ng-template #elseBlock>
+  <tbody  *ngFor="let offre of (offres$ | async)"   >
+    <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr>
+    <tr *ngIf="villedp == offre.villeDep || villearr == offre.villeArv || date == offre.date">
+      
+      <th scope="row">{{offre.proposerpar}}</th>
+      <td>{{offre.villeDep}}</td>
+      <td>{{offre.villeArv}}</td>
+      <td>{{offre.date}}</td>
+      <th>
+        <a style="color: #408816;" (click)= editOffre(offre)>modifier</a></th>
+
+      <th>
+        <a  style="color: #408816;" (click)= deleteOffre(offre)>supprimer</a>
+      </th>
+
+    </tr>
+  </tbody>
+</ng-template>
+</table>
+</div>

@@ -1,0 +1,33 @@
+<div class="container col-lg-10"  style="margin-left:15%;">
+  <div class="jumbotron col-lg-6 border" style="border-radius: 10%;">
+<div style="padding-left: 20%;">
+<h2 class="font-weight-bold" >Ajouter une nouvelle offre</h2>
+<hr class="col-lg-8 ml-lg-0">
+  <form [formGroup]="offreForm" (submit)="createOffre()" class="form-horizontal">
+    <label class="sr-only" for="Proposé par" class="col-lg-4 control-label font-weight-bold">Proposé par</label>
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
+      <input type="text" class="form-control" formControlName="proposerpar" placeholder="Nom Prénom">
+    </div>
+    <label class="sr-only" for="Ville de départ" class="col-lg-4 control-label font-weight-bold">Ville de départ</label>
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
+      <input type="text" class="form-control" formControlName="villeDep" placeholder="Ville départ">
+    </div>
+
+    <label class="sr-only" for="Ville d'arrivée" class="col-lg-4 control-label font-weight-bold">Ville d'arrivée</label>
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
+      <input type="text" class="form-control" formControlName="villeArv" placeholder="Ville arrivée">
+    </div>
+
+    <label class="sr-only" for="Date" class="col-lg-4 control-label font-weight-bold">Date</label>
+    <div class="input-group mb-2 mr-sm-2 col-lg-8">
+        <input type="date" class="form-control" formControlName="date">
+    </div>
+    <div style="padding-left: 17%;">
+      <button type="submit" class="btn btn-primary mb-2" style="color:white; background-color: #408816; ">Ajouter Offre</button>
+      <button type="button" class="btn btn-default mb-2" style="margin-left: 7%; background-color: gray; color:white;" [routerLink]="['/offres']">Annuler</button>
+    </div>
+    
+  </form>
+</div>
+</div>
+</div>
