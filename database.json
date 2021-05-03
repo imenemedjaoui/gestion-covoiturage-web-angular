@@ -15,7 +15,7 @@
       "id": 2
     },
     {
-      "proposerpar": "employé 1",
+      "proposerpar": "John Lennon",
       "villeDep": "Pyongyang",
       "villeArv": "Kyoto",
       "date": "2021-04-29",
@@ -27,20 +27,6 @@
       "villeArv": "Hanalulu",
       "date": "2022-04-30",
       "id": 4
-    },
-    {
-      "proposerpar": "ana",
-      "villeDep": "lharrach",
-      "villeArv": "wahran",
-      "date": "2022-05-06",
-      "id": 5
-    },
-    {
-      "proposerpar": "anaaaa",
-      "villeDep": "ozdserotgio",
-      "villeArv": "jozehzrg",
-      "date": "2010-10-10",
-      "id": 6
     }
   ]
 }

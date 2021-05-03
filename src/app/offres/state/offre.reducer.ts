@@ -1,7 +1,7 @@
 import * as offreActions from "./offre.actions";
 import { Offre } from "../offre.model";
 import * as fromRoot from "../../state/app-state";
-import { createFeatureSelector, createSelector,createReducer, on } from "@ngrx/store";
+import { createFeatureSelector, createSelector} from "@ngrx/store";
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 
 export interface OffreState extends EntityState<Offre> {
