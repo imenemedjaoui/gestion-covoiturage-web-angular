@@ -19,24 +19,16 @@ export class OffreSearchComponent implements OnInit {
   offres$: Observable<Offre[]>;
   error$: Observable<String>;
 
-  constructor(
-    private fb: FormBuilder,
-    private store: Store<fromOffre.AppState>) { }
+  constructor(private store: Store<fromOffre.AppState>) { }
 
   ngOnInit() {
-  /*this.searchForm = this.fb.group({
-    proposerpar: ["", Validators.required],
-    villeDep: ["", Validators.required],
-    villeArv: ["", Validators.required],
-    date: ["", Validators.required]
-  });*/
   this.store.dispatch(new offreActions.LoadOffres());
     this.offres$ = this.store.pipe(select(fromOffre.getOffres));
     this.error$ = this.store.pipe(select(fromOffre.getError));
 }
 
 
-/*
+
 searchBy(){
   const newOffre: Offre = {
     proposerpar: this.searchForm.get("proposerpar").value,
@@ -51,6 +43,15 @@ searchBy(){
 
   this.searchForm.reset();
 
-}*/
+}
 
+deleteOffre(offre:  Offre) {
+  if (confirm("Êtes-vous sûr de vouloir supprimer cette offre? ")) {
+    this.store.dispatch(new offreActions.DeleteOffre(offre.id));
+  }
+}
+
+editOffre(offre: Offre) {
+  this.store.dispatch(new offreActions.LoadOffre(offre.id));
+}
 }
